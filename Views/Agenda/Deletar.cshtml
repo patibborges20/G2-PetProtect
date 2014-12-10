@@ -1,0 +1,26 @@
+﻿@model G2_PetProtect.Models.Agenda.Agenda
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h3>Tem certeza que deseja apagar a consulta?</h3>
+<hr />
+
+<div role="form">
+    <div class="form-group">
+        Id: @Model.idAgenda
+    </div>
+    <div class="form-group">
+        Nome: @Model.pets.nomePet
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div>
+            <input class="btn btn-default" type="submit" value="Delete" />
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
+
+

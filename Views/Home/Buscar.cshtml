@@ -1,0 +1,39 @@
+﻿@model G2_PetProtect.Models.Agenda.Agenda
+
+@{
+    ViewBag.Title = "Buscar";
+}
+ <table>  
+  @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.data)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.pets.nomeDono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pets.nomePet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servico.nomeServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servico.precoP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servico.precoM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servico.precoG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.funcionario.nomeFuncionario)
+            </td>
+        </tr>
+    }
+
+</table>

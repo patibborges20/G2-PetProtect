@@ -1,0 +1,44 @@
+﻿@model G2_PetProtect.Models.Pets.Pets
+@{
+    ViewBag.Title = "AdicionarPet";
+}
+
+<h2>Adicionar Pet</h2>
+@using (Html.BeginForm())
+{
+    <fieldset role="form">
+        <legend>Cadastrar</legend>
+
+        <div>
+            Nome do Dono
+        </div>
+        <div>
+            @Html.EditorFor(model => model.nomeDono)
+            @Html.ValidationMessageFor(model => model.nomeDono, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            Telefone
+        </div>
+        <div>
+            @Html.EditorFor(model => model.telefoneDono)
+            @Html.ValidationMessageFor(model => model.telefoneDono, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            Nome do Pet
+        </div>
+        <div>
+            @Html.EditorFor(model => model.nomePet)
+            @Html.ValidationMessageFor(model => model.nomePet, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            <hr />
+            <input class="btn btn-success" type="submit" value="Salvar" />
+            <input class="btn btn-warning" type="reset" value="Limpar" />
+            <hr />
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    </fieldset>
+}
+
+
+

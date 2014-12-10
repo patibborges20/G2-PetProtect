@@ -1,0 +1,47 @@
+﻿@model G2_PetProtect.Models.Pets.Pets
+@{
+    ViewBag.Title = "EditarPet";
+}
+
+<h2>EditarPet</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset role="form">
+        <legend>Editar</legend>
+        <div>
+            @Html.TextBoxFor(model => model.idPet)
+        </div>
+        <div>
+            Nome do Dono
+        </div>
+        <div>
+            @Html.EditorFor(model => model.nomeDono)
+            @Html.ValidationMessageFor(model => model.nomeDono, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            Telefone
+        </div>
+        <div>
+            @Html.EditorFor(model => model.telefoneDono)
+            @Html.ValidationMessageFor(model => model.telefoneDono, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            Nome do Pet
+        </div>
+        <div>
+            @Html.EditorFor(model => model.nomePet)
+            @Html.ValidationMessageFor(model => model.nomePet, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            <hr />
+            <input class="btn btn-success" type="submit" value="Salvar" />
+            <hr />
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    </fieldset>
+}
+
+
+
+

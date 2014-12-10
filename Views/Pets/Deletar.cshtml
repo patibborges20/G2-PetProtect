@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Deletar</h2>
+
+<h3>Tem certeza que deseja apagar o cliente e seu Pet?</h3>
+<hr />
+
+<div role="form">
+    <div class="form-group">
+        Id: @Model.nomeDono
+    </div>
+    <div class="form-group">
+        Nome: @Model.nomePet
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div>
+            <input class="btn btn-default" type="submit" value="Delete" />
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
+
+
+

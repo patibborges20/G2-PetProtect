@@ -1,0 +1,55 @@
+﻿@model IEnumerable<G2_PetProtect.Models.Servicos.Servicos>
+@{
+    ViewBag.Title = "Index";
+}
+<hr>
+@Html.ActionLink("Criar Novo Servico", "AdicionarServico", null, new { @class = "btn btn-primary" })
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            Codigo do servico
+        </th>
+        <th>
+            Nome do servico
+        </th>
+        <th>
+            Porte Grande
+        </th>
+        <th>
+            Porte Medio
+        </th>
+        <th>
+            Porte Pequeno
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precoG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precoM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precoP)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarServico", null, new { pId = item.idServico }, new { @class = "btn btn-primary", }) |
+                @Html.ActionLink("Deletar", "Deletar", new { pId = item.idServico }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

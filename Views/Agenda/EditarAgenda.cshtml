@@ -1,0 +1,58 @@
+﻿@model G2_PetProtect.Models.Agenda.Agenda
+@{
+    ViewBag.Title = "EditarAgenda";
+}
+
+<h2>EditarAgenda</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset role="form">
+        <legend>Editar</legend>
+        <div>
+            @Html.TextBoxFor(model => model.idAgenda)
+        </div>
+        <div>
+            Funcionario
+        </div>
+        <div class="form-group">
+            @Html.Label("Pets", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.pets.idPet, ViewBag.vPets as SelectList, string.Empty)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Servicos", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.servico.idServico, ViewBag.vServicos as SelectList, string.Empty)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Funcionarios", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.funcionario.idFuncionario, ViewBag.vFuncionarios as SelectList, string.Empty)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Data", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.data)
+                @Html.ValidationMessageFor(model => model.data, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Horario", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.horario.idHorario, ViewBag.vHorarios as SelectList, string.Empty)
+            </div>
+        </div>
+        <div>
+            <hr />
+            <input class="btn btn-success" type="submit" value="Salvar" />
+            <hr />
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    </fieldset>
+}
+
+

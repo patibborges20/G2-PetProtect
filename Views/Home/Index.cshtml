@@ -1,0 +1,66 @@
+﻿@model G2_PetProtect.Models.Agenda.Agenda
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div style="background-color:lightpink" class="jumbotron">
+    <h1>Pet shop</h1>
+</div>
+<div>
+    
+</div>
+@using (Html.BeginForm())
+{
+    <fieldset role="form">
+        <div class="form-group">
+            <table>
+                <tr>
+
+                    <td> @Html.Label("Funcionarios", htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+                    <td>@Html.DropDownListFor(model => model.funcionario.idFuncionario, ViewBag.vFuncionarios as SelectList, string.Empty)</td>
+
+                    <td>@Html.Label("Data", htmlAttributes: new { @class = "control-label col-md-2" })</td>
+
+                    <td>
+                        @Html.EditorFor(model => model.data)
+                        @Html.ValidationMessageFor(model => model.data, "", new { @class = "text-danger" })
+                    </td>
+                   <td> <input class="btn btn-success" type="submit" value="Salvar" /></td>
+
+
+
+                </tr>
+            </table>
+
+        </div>
+    </fieldset>
+}
+
+        <!--
+        <div class="row">
+            <div class="col-md-4">
+                    <h2>Pets</h2>
+                    <p>
+                       Veja os Pets Já cadastrados
+                    </p>
+                    <p>  <p><a class="btn btn-default" @Html.ActionLink("Clique Aqui", "Index", "Pets")</a></p></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Serviços</h2>
+                <p>Veja os serviços que a petshop oferece</p>
+                <p><a class="btn btn-default" @Html.ActionLink("Clique Aqui", "Index", "Servicos")</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Funcionarios</h2>
+                <p>Verifique os Funcionarios da Sua empresa.</p>
+                <p><a class="btn btn-default" @Html.ActionLink("Clique Aqui", "Index", "Funcionarios")</a></p>
+            </div>
+            <center>
+            <div style="margin-left:30%;" class="col-md-4">
+                <h2>Agenda</h2>
+                <p>Veja a Agenda de Serviços</p>
+                <p><a class="btn btn-default" @Html.ActionLink("Clique Aqui", "Index", "Agenda")</a></p>
+            </div>
+                </</center>>
+        </div>-->

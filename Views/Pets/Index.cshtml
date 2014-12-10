@@ -1,0 +1,52 @@
+﻿@model IEnumerable<G2_PetProtect.Models.Pets.Pets>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<hr>
+@Html.ActionLink("Novo Pet", "AdicionarPet", null, new { @class = "btn btn-primary" })
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            Código do Pet
+        </th>
+        <th>
+            Nome do Dono
+        </th>
+        <th>
+            Telefone do Dono
+        </th>
+        <th>
+            Nome do Pet
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idPet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeDono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefoneDono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomePet)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarPet", null, new { pId = item.idPet }, new { @class = "btn btn-primary", }) |
+                @Html.ActionLink("Deletar", "Deletar", new { pId = item.idPet }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+

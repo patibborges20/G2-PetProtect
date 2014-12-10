@@ -1,0 +1,53 @@
+﻿@model G2_PetProtect.Models.Agenda.Agenda
+@{
+    ViewBag.Title = "Adicionar";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Agenda</h4>
+        <hr />
+        <div class="form-group">
+            @Html.Label("Pets", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.pets.idPet, ViewBag.vPets as SelectList, string.Empty)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Servicos", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.servico.idServico, ViewBag.vServicos as SelectList, string.Empty)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Funcionarios", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.funcionario.idFuncionario, ViewBag.vFuncionarios as SelectList, string.Empty)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Data", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.data)
+                @Html.ValidationMessageFor(model => model.data, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Horarios", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.horario.idHorario, ViewBag.vHorarios as SelectList, string.Empty)
+            </div>
+        </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Próximo" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>

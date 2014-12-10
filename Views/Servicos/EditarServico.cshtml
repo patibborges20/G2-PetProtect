@@ -1,0 +1,51 @@
+﻿@model G2_PetProtect.Models.Servicos.Servicos
+@{
+    ViewBag.Title = "EditarServico";
+}
+
+<h2>EditarServico</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset role="form">
+        <legend>Editar</legend>
+        <div>
+            @Html.TextBoxFor(model => model.idServico)
+        </div>
+        <div>
+            Servico
+        </div>
+        <div>
+            @Html.EditorFor(model => model.nomeServico)
+            @Html.ValidationMessageFor(model => model.nomeServico, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            Porte Grande
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.precoG)
+        </div>
+        <div>
+            Porte Médio
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.precoM)
+        </div>
+        <div>
+            Porte Pequeno
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.precoP)
+        </div>
+        <div>
+            <hr />
+            <input class="btn btn-success" type="submit" value="Salvar" />
+            <hr />
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    </fieldset>
+}
+
+
+
+

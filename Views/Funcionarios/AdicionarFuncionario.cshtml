@@ -1,0 +1,29 @@
+﻿@model G2_PetProtect.Models.Funcionarios.Funcionarios
+@{
+    ViewBag.Title = "AdicionarFuncionario";
+}
+
+<h2>Adicionar Funcionario</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset role="form">
+        <legend>Cadastrar</legend>
+
+        <div>
+            Nome do Funcionario
+        </div>
+        <div>
+            @Html.EditorFor(model => model.nomeFuncionario)
+            @Html.ValidationMessageFor(model => model.nomeFuncionario, "", new { @class = "text-danger" })
+        </div>
+        <div>
+            <hr />
+            <input class="btn btn-success" type="submit" value="Salvar" />
+            <input class="btn btn-warning" type="reset" value="Limpar" />
+            <hr />
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    </fieldset>
+}
+

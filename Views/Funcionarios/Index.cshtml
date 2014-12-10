@@ -1,0 +1,38 @@
+﻿@model IEnumerable<G2_PetProtect.Models.Funcionarios.Funcionarios>
+@{
+    ViewBag.Title = "Index";
+}
+
+<hr>
+@Html.ActionLink("Criar Novo Funcionario", "AdicionarFuncionario", null, new { @class = "btn btn-primary" })
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            Código do Funcionario
+        </th>
+        <th>
+            Nome
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idFuncionario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeFuncionario)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarFuncionario", null, new { pId = item.idFuncionario }, new { @class = "btn btn-primary", }) |
+                @Html.ActionLink("Deletar", "Deletar", new { pId = item.idFuncionario }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
